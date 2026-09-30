@@ -9,7 +9,7 @@
 Dado un conjunto de $m$ observaciones empíricas y $n$ variables explicativas (con $m > n$), el modelo lineal se formula matricialmente como el sistema **sobredeterminado**:
 
 $$
-A x = b \tag{1}
+A x = b \quad (1)
 $$
 
 donde:
@@ -29,7 +29,7 @@ Ante la imposibilidad de hallar una solución exacta (ya que $b \notin C(A)$, el
 El vector de residuos $e \in \mathbb{R}^{m}$ correspondiente al error de ajuste se define formalmente como:
 
 $$
-e = b - \hat{b} = b - A\hat{x} \tag{2}
+e = b - \hat{b} = b - A\hat{x} \quad (2)
 $$
 
 ### Axioma 1 (Ecuaciones Normales)
@@ -37,7 +37,7 @@ $$
 Para que el residuo $e$ sea ortogonal a la imagen de $A$, el estimador óptimo debe satisfacer de manera fundamental las **ecuaciones normales**:
 
 $$
-A^{T} A \hat{x} = A^{T} b \tag{3}
+A^{T} A \hat{x} = A^{T} b \quad (3)
 $$
 
 ### Proposición 1 (Deducción del Estimador Óptimo)
@@ -47,17 +47,16 @@ Bajo la condición de que la matriz de diseño tenga rango columna completo, es 
 **Desarrollo analítico.** Multiplicando ambos lados de las ecuaciones normales por la inversa $(A^{T} A)^{-1}$, aislamos directamente el vector de parámetros:
 
 $$
-(A^{T} A)^{-1} (A^{T} A) \hat{x} = (A^{T} A)^{-1} A^{T} b \tag{4}
-$$
-
-$$
-I_n \, \hat{x} = (A^{T} A)^{-1} A^{T} b \tag{5}
+\begin{aligned}
+(A^{T} A)^{-1} (A^{T} A) \hat{x} &= (A^{T} A)^{-1} A^{T} b \quad &(4) \\
+I_n \, \hat{x} &= (A^{T} A)^{-1} A^{T} b \quad &(5)
+\end{aligned}
 $$
 
 Obteniendo el **estimador analítico general de mínimos cuadrados**:
 
 $$
-\boxed{\hat{x} = (A^{T} A)^{-1} A^{T} b} \tag{6}
+\boxed{\hat{x} = (A^{T} A)^{-1} A^{T} b} \quad (6)
 $$
 
 ---
@@ -67,7 +66,7 @@ $$
 Para el modelo de una recta con ecuación $y = mx + b$, adaptamos los coeficientes ordenando respecto a la pendiente ($m$) y el intercepto ($b$):
 
 $$
-y_i = m \cdot x_i + b \cdot 1 \tag{7}
+y_i = m \cdot x_i + b \cdot 1 \quad (7)
 $$
 
 Definimos la estructuración matricial del modelo:
@@ -81,17 +80,17 @@ $$
 **Matriz de diseño para $N$ observaciones:**
 
 $$
-A = \begin{bmatrix} x_1 & 1 \\ x_2 & 1 \\ \vdots & \vdots \\ x_N & 1 \end{bmatrix} \tag{8}
+A = \begin{bmatrix} x_1 & 1 \\ x_2 & 1 \\ \vdots & \vdots \\ x_N & 1 \end{bmatrix} \quad (8)
 $$
 
 $$
-A^{T} A = \begin{bmatrix} x_1 & x_2 & \cdots & x_N \\ 1 & 1 & \cdots & 1 \end{bmatrix} \begin{bmatrix} x_1 & 1 \\ x_2 & 1 \\ \vdots & \vdots \\ x_N & 1 \end{bmatrix} = \begin{bmatrix} \sum x_i^{2} & \sum x_i \\ \sum x_i & N \end{bmatrix} \tag{9}
+A^{T} A = \begin{bmatrix} x_1 & x_2 & \cdots & x_N \\ 1 & 1 & \cdots & 1 \end{bmatrix} \begin{bmatrix} x_1 & 1 \\ x_2 & 1 \\ \vdots & \vdots \\ x_N & 1 \end{bmatrix} = \begin{bmatrix} \sum x_i^{2} & \sum x_i \\ \sum x_i & N \end{bmatrix} \quad (9)
 $$
 
 El producto matricial fundamental $A^{T} A$ resulta en una matriz **simétrica de dimensiones $2 \times 2$**. Sustituyendo en la expresión óptima, los parámetros se obtienen evaluando:
 
 $$
-\begin{bmatrix} m \\ b \end{bmatrix} = \left( \begin{bmatrix} \sum x_i^{2} & \sum x_i \\ \sum x_i & N \end{bmatrix} \right)^{-1} A^{T} y \tag{10}
+\begin{bmatrix} m \\ b \end{bmatrix} = \left( \begin{bmatrix} \sum x_i^{2} & \sum x_i \\ \sum x_i & N \end{bmatrix} \right)^{-1} A^{T} y \quad (10)
 $$
 
 ---
@@ -127,7 +126,7 @@ ajuste_lin = m_lin * x + c_lin
 En álgebra lineal, este paso equivale formalmente a computar la proyección de estimación:
 
 $$
-\hat{y} = A \hat{x} \tag{11}
+\hat{y} = A \hat{x} \quad (11)
 $$
 
 obteniendo el **vector de respuesta proyectado** sobre el subespacio del modelo.
