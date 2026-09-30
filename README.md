@@ -51,8 +51,8 @@ Tras evaluar los cinco modelos mediante el coeficiente de determinación ($R^2$)
 |---|---|---|
 | **Cúbico** | ≈ 0.21 | 🥇 Mejor ajuste |
 | **Cuadrático** | ≈ 0.21 | 🥈 Muy cercano |
-| **Logarítmico** | — | ⚠️ Demasiado rígido |
-| **Lineal** | — | ⚠️ Subestima la curva |
+| **Logarítmico** |≈ 0.2 | ⚠️ Demasiado rígido |
+| **Lineal** |≈  0.19| ⚠️ Subestima la curva |
 | **Exponencial** | < 0 | ❌ Descartado |
 
 **Hallazgos clave:**
